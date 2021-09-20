@@ -1,0 +1,468 @@
+
+// --------------------------------------------------------------------------
+//            _           _
+//   ___  ___| | ___  ___| |_ _ __ ___  _ __
+//  / __|/ _ \ |/ _ \/ __| __| '__/ _ \| '_ \
+//  \__ \  __/ |  __/ (__| |_| | | (_) | | | |
+//  |___/\___|_|\___|\___|\__|_|  \___/|_| |_|
+//
+// --------------------------------------------------------------------------
+//  Version: 2.0.6;
+//   Author: Simon Sturgess;
+//     Docs: dahliacreative.github.io/selectron;
+//     Repo: github.com/dahliacreative/selectron;
+//   Issues: github.com/dahliacreative/selectron/issues;
+// --------------------------------------------------------------------------
+
+
+// --------------------------------------------------------------------------
+// Default Theme Variables
+// --------------------------------------------------------------------------
+
+@selectron-border-radius:           0 !important;
+@selectron-border-width:            1px !important;
+@selectron-color-background-dark:   #000000 !important;
+@selectron-color-background-light:  #ffffff !important;
+@selectron-color-brand:             #0373c6 !important;
+
+@selectron-color-font-dark:         #000000 !important;
+@selectron-color-font-light:        #dddddd !important;
+@selectron-font-family:             inherit !important;
+@selectron-font-size:               14px !important;
+@selectron-line-height:             inherit !important;
+@selectron-text-align:              inherit !important;
+
+@selectron-max-width:               100% !important;
+@selectron-min-width:               auto !important;
+@selectron-height:                  37px !important;
+@selectron-options-max-height:      auto !important;
+@selectron-ovf-max-height:          90px !important;
+
+@selectron-padding:                 5px 40px 5px 15px !important;
+@selectron-option-padding:          5px 15px 5px 15px !important;
+@selectron-optgroup-padding:        5px 15px 5px 15px !important;
+@selectron-search-padding:          5px 15px 5px 15px !important;
+@selectron-search-height:           37px !important;
+
+@selectron-arrow-border-width:      1px !important;
+@selectron-arrow-border-radius:     0px !important;
+@selectron-arrow-size:              7px !important;
+@selectron-block-width:             50px !important;
+
+@selectron-max-icon-size:           50px !important;
+@selectron-icon-margin:             0 10px 0px 0 !important;
+
+
+// --------------------------------------------------------------------------
+// Default Theme
+// --------------------------------------------------------------------------
+
+.selectron {
+  font-weight: 400;
+  color: @selectron-color-font-dark;
+  display: inline-block;
+  font-family: @selectron-font-family;
+  font-size: @selectron-font-size;
+  max-width: @selectron-max-width;
+  min-width: @selectron-min-width;
+  position: relative;
+  width: 100%;
+
+  &select {
+    display: none;
+  }
+
+  &--disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &--is-touch {
+
+    .selectron__select {
+      color: @selectron-color-font-dark;
+      font-family: @selectron-font-family;
+      font-size: @selectron-font-size;
+      font-size: @selectron-font-size;
+      height: 100%;
+      padding: @selectron-padding;
+      visibility: visible;
+      width: 100%;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+  }
+
+
+  // ------------------------------------------------------------------------
+  // Select
+  // ------------------------------------------------------------------------
+
+  &__select {
+    background-color: transparent;
+    border: none;
+    height: 0;
+    left: 0;
+    outline: none;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    width: 0;
+  }
+
+
+  // ------------------------------------------------------------------------
+  // Trigger
+  // ------------------------------------------------------------------------
+  &__trigger {
+    border: @selectron-border-width solid lighten(@selectron-color-font-light, 0%);
+  }
+  
+  &--is-touch,
+  &__trigger {
+    background-color: @selectron-color-background-light;
+    border-radius: @selectron-border-radius;
+    // border: @selectron-border-width solid lighten(@selectron-color-font-light, 0%);
+    box-sizing: border-box;
+    // color: lighten(@selectron-color-font-dark, 30%);
+    cursor: pointer;
+    font-family: @selectron-font-family;
+    font-size: @selectron-font-size;
+    height: @selectron-height;
+    line-height: @selectron-line-height;
+    outline: none;
+    overflow: hidden;
+    padding: @selectron-padding;
+    position: relative;
+    text-align: @selectron-text-align;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+
+    &::-moz-focus-inner {
+      border: none;
+    }
+
+    &--is-filled {
+      padding: @selectron-padding;
+      color: @selectron-color-font-dark;
+      border: @selectron-border-width solid lighten(@selectron-color-font-light, 0%);
+    }
+
+    &--is-open {
+      border-radius: @selectron-border-radius @selectron-border-radius 0 0;
+      color: @selectron-color-font-dark;
+      border: @selectron-border-width solid lighten(@selectron-color-background-dark, 0%);
+    }
+
+    &--is-overflowing {
+      // border-radius: 0 0 @selectron-border-radius @selectron-border-radius;
+    }
+
+    &:focus {
+      border-color: @selectron-color-background-dark;
+    }
+
+    &:before {
+    //   content: "";
+    //   border-bottom: @selectron-arrow-border-width solid @selectron-color-brand;
+    //   border-left: @selectron-arrow-border-width solid @selectron-color-brand;
+    //   height: @selectron-arrow-size;
+    //   border-radius: 0 0 0 @selectron-arrow-border-radius;
+    //   width: @selectron-arrow-size;
+    //   position: absolute;
+    //   top: 50%;
+    //   right: calc(20px - (@selectron-arrow-border-width * 2));
+    //   margin-top: -(@selectron-arrow-border-width / 2);
+    //   -webkit-transform: rotate(-45deg) translate(50%, -50%);
+    //   -ms-transform: rotate(-45deg) translate(50%, -50%);
+    //   -o-transform: rotate(-45deg) translate(50%, -50%);
+    //   transform: rotate(-45deg) translate(50%, -50%);
+    }
+  }
+
+
+  // ------------------------------------------------------------------------
+  // Search
+  // ------------------------------------------------------------------------
+
+  &__search {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    border: none !important;
+    border-left: @selectron-border-width solid @selectron-color-font-light !important;
+    border-right: @selectron-border-width solid @selectron-color-font-light !important;
+    box-sizing: border-box;
+    color: @selectron-color-font-dark;
+    font-family: @selectron-font-family;
+    font-size: @selectron-font-size;
+    height: @selectron-search-height;
+    left: 0;
+    opacity: 0;
+    outline: none;
+    padding: @selectron-search-padding;
+    position: absolute;
+    top: 100%;
+    visibility: hidden;
+    width: 100%;
+    z-index: 11;
+
+    + .selectron__options {
+      top: calc(100% + @selectron-search-height);
+    }
+
+    &--is-overflowing {
+      // border-bottom: none;
+      // border-top: @selectron-border-width solid @selectron-color-font-light;
+      // bottom: 100%;
+      // top: auto;
+
+      // + .selectron__options {
+      //   bottom: calc(100% + @selectron-search-height);
+      //   top: auto;
+      //   }
+    }
+
+    &--is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+
+  // ------------------------------------------------------------------------
+  // Options
+  // ------------------------------------------------------------------------
+
+  &__options {
+    background-color: #fff;
+    border-radius: 0 0 @selectron-border-radius @selectron-border-radius;
+    border: @selectron-border-width solid @selectron-color-font-light;
+    border-top: none;
+    box-sizing: border-box;
+    left: 0;
+    list-style: none;
+    margin: 0;
+    max-height: @selectron-options-max-height;
+    opacity: 0;
+    overflow: auto;
+    padding: 0;
+    position: absolute;
+    text-align: @selectron-text-align;
+    top: 100%;
+    visibility: hidden;
+    width: 100%;
+    z-index: 50;
+    -webkit-overflow-scrolling: touch;
+
+    &--is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &--is-overflowing {
+      max-height: @selectron-ovf-max-height;
+      // border-bottom: none;
+      // border-radius: @selectron-border-radius @selectron-border-radius 0 0;
+      // border-top: @selectron-border-width solid @selectron-color-font-light;
+      // bottom: 100%;
+      // top: auto;
+    }
+  }
+
+
+  // ------------------------------------------------------------------------
+  // Option
+  // ------------------------------------------------------------------------
+
+  &__option {
+    cursor: pointer;
+    line-height: @selectron-line-height;
+    overflow: hidden;
+    padding: @selectron-option-padding;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &--optgroup {
+      padding: @selectron-optgroup-padding;
+    }
+
+    &--is-selected {
+      background-color: transparent;
+      color: @selectron-color-brand;
+    }
+
+    &--is-disabled {
+      color: lighten(@selectron-color-font-dark, 40%);
+
+      &.selectron__option--is-hovered {
+        background-color: @selectron-color-brand;
+        color: @selectron-color-font-light !important;
+      }
+    }
+
+    &[data-value=""] {
+      display: none;      
+    }
+
+    &--is-disabled {
+      pointer-events: none;
+    }
+
+    &--is-hidden {
+      display: none;
+    }
+
+    &--is-hovered {
+      background-color: @selectron-color-brand;
+      color: #fff !important;
+    }
+  }
+
+
+  // ------------------------------------------------------------------------
+  // No Results
+  // ------------------------------------------------------------------------
+
+  &__no-results {
+    line-height: @selectron-line-height;
+    padding: @selectron-option-padding;
+  }
+
+
+  // ------------------------------------------------------------------------
+  // Option Group
+  // ------------------------------------------------------------------------
+
+  &__option-group {
+    color: @selectron-color-font-light;
+    cursor: default;
+    padding: @selectron-option-padding;
+  }
+
+
+  // ------------------------------------------------------------------------
+  // Icon
+  // ------------------------------------------------------------------------
+
+  &__icon {
+    display: inline-block;
+    margin: @selectron-icon-margin;
+    max-width: @selectron-max-icon-size;
+    vertical-align: middle;
+  }
+
+
+  // ------------------------------------------------------------------------
+  // Dark Theme
+  // ------------------------------------------------------------------------
+
+  &--block {
+
+    .selectron {
+
+      // --------------------------------------------------------------------
+      // Trigger
+      // --------------------------------------------------------------------
+
+      &__trigger {
+
+        &:before {
+          background-color: @selectron-color-brand;
+          border: none;
+          height: 100%;
+          margin: 0;
+          right: 0;
+          top: 0;
+          width: @selectron-block-width;
+          -webkit-transform: none;
+          -ms-transform: none;
+          -o-transform: none;
+          transform: none;
+        }
+
+        &:after {
+          border-color: #ffffff transparent transparent transparent;
+          border-style: solid;
+          border-width: (@selectron-arrow-size/2) (@selectron-arrow-size/2) 0 (@selectron-arrow-size/2);
+          content: "";
+          height: 0;
+          width: 0;
+          position: absolute;
+          top: 50%;
+          margin-top: -@selectron-arrow-size/4;
+          right: (@selectron-block-width - @selectron-arrow-size)/2;
+        }
+      }
+    }
+  }
+
+
+
+
+  // ------------------------------------------------------------------------
+  // Dark Theme
+  // ------------------------------------------------------------------------
+
+  &--dark {
+    color: #fff;
+
+    .selectron {
+
+      // --------------------------------------------------------------------
+      // Trigger
+      // --------------------------------------------------------------------
+
+      &__trigger {
+        background-color: @selectron-color-background-dark;
+        border: none;
+        color: @selectron-color-font-dark;
+
+        &--is-filled {
+          color: #fff;
+        }
+
+        &--is-open {
+          background-color: lighten(@selectron-color-background-dark, 5%);
+          color: #fff;
+        }
+
+        &:focus {
+          background-color: lighten(@selectron-color-background-dark, 5%);
+        }
+      }
+
+
+      // --------------------------------------------------------------------
+      // Options
+      // --------------------------------------------------------------------
+
+      &__options {
+        background-color: @selectron-color-background-dark;
+        border: none;
+      }
+
+
+      // --------------------------------------------------------------------
+      // Option
+      // --------------------------------------------------------------------
+
+      &__option {
+
+        &[data-value=""] {
+          color: @selectron-color-font-dark;
+        }
+
+        &--is-hovered,
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+
